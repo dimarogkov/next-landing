@@ -1,15 +1,15 @@
+import { headerLinks } from '@/data/headerLinks';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Logo from '@/public/logo.svg';
 import User from '@/public/header_user.svg';
-
-import { headerLinks } from '@/data/headerLinks';
 import HeaderMenu from './HeaderMenu';
 
 const Header = () => {
     return (
-        <header className='flex items-center justify-between px-[20px] py-[16px] lg:p-[24px]'>
+        <header className='flex items-center justify-between w-full max-w-[1440px] px-[20px] py-[16px] lg:p-[24px] m-auto'>
             <div className='flex items-center'>
                 <Link
                     href='/'

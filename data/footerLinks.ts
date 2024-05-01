@@ -1,4 +1,4 @@
-export const headerLinks = [
+export const footerLinks = [
     {
         id: 0,
         href: '/',

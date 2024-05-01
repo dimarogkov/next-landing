@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
+import { headerLinks } from '@/data/headerLinks';
 
 import Image from 'next/image';
 import Link from 'next/link';
+
 import Burger from '@/public/header_burger.svg';
 import cn from 'classnames';
-
-import { headerLinks } from '@/data/headerLinks';
 
 const HeaderMenu = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
