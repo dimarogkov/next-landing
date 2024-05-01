@@ -1,7 +1,9 @@
+import Header from '@/components/Header';
+
 const HomePage = () => {
     return (
-        <main>
-            <h1>Home Page</h1>
+        <main className='relative w-full max-w-[1440px] m-auto'>
+            <Header />
         </main>
     );
 };
