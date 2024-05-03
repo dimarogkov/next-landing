@@ -1,4 +1,4 @@
-import { FooterSocial } from '@/types/footerSocial';
+import { FooterSocial } from '@/types/interfaces/FooterSocial';
 
 import X from '@/public/footer_x.svg';
 import Facebook from '@/public/footer_facebook.svg';
