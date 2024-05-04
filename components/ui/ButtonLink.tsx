@@ -1,7 +1,6 @@
 'use client';
 import { BtnLinkTypes } from '@/types/enums/BtnLinkTypes';
 import { useState, useEffect } from 'react';
-import { mainStyles } from '@/variables/mainStyles';
 
 import Link from 'next/link';
 
@@ -13,7 +12,6 @@ type Props = {
 
 const ButtonLink: React.FC<Props> = ({ href = '/', name = 'Button Link', type = BtnLinkTypes.default }) => {
     const [btnLinkStyles, setBtnLinkStyles] = useState('bg-[#0085FF] text-[#fff]');
-    const { transitionOpacity } = mainStyles;
 
     useEffect(() => {
         type === BtnLinkTypes.default
@@ -24,7 +22,7 @@ const ButtonLink: React.FC<Props> = ({ href = '/', name = 'Button Link', type = 
     return (
         <Link
             href={href}
-            className={`${btnLinkStyles} ${transitionOpacity} flex items-center justify-center sm:w-fit min-w-[160px] h-[56px] text-[18px] font-medium rounded-[4px] px-[16px] mb-[24px] sm:mb-0`}
+            className={`flex items-center justify-center sm:w-fit min-w-[160px] h-[56px] text-[18px] font-medium rounded-[4px] px-[16px] mb-[24px] sm:mb-0 transition-opacity duration-300 hover:opacity-75 ${btnLinkStyles}`}
         >
             {name}
         </Link>

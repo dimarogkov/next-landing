@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
 import { headerLinks } from '@/data/headerLinks';
-import { mainStyles } from '@/variables/mainStyles';
 
 import Link from 'next/link';
 import cn from 'classnames';
@@ -11,8 +10,6 @@ type Props = {
 };
 
 const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = () => {} }) => {
-    const { transitionOpacity } = mainStyles;
-
     return (
         <div
             className={cn('fixed z-50 block lg:hidden top-0 left-0 w-full h-full transition-all duration-300', {
@@ -40,7 +37,7 @@ const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = (
                         <Link
                             href={href}
                             key={`menu-${id}`}
-                            className={`${transitionOpacity} block w-full md:text-[18px] font-medium text-[#36485C]  mb-[12px] last:mb-0`}
+                            className='block w-full md:text-[18px] font-medium text-[#36485C] mb-[12px] last:mb-0 transition-opacity duration-300 hover:opacity-75'
                         >
                             {name}
                         </Link>
@@ -48,7 +45,7 @@ const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = (
                 </div>
                 <Link
                     href='/'
-                    className={`${transitionOpacity} block md:hidden md:text-[18px] font-medium text-[#36485C]`}
+                    className='block md:hidden md:text-[18px] font-medium text-[#36485C] transition-opacity duration-300 hover:opacity-75'
                 >
                     Open an Account
                 </Link>

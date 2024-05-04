@@ -1,7 +1,6 @@
 'use client';
 import { SimpleLinkTypes } from '@/types/enums/SimpleLinkTypes';
 import { useState, useEffect } from 'react';
-import { mainStyles } from '@/variables/mainStyles';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,7 +19,6 @@ type Props = {
 const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleLinkTypes.default }) => {
     const [linkStyles, setLinkStyles] = useState('text-[#0085FF]');
     const [linkIcon, setLinkIcon] = useState(ArrowBlue);
-    const { transitionOpacity } = mainStyles;
 
     useEffect(() => {
         switch (true) {
@@ -45,7 +43,7 @@ const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleL
     return (
         <Link
             href={href}
-            className={`${linkStyles} ${transitionOpacity} flex items-center justify-center sm:w-fit text-[18px] font-medium`}
+            className={`flex items-center justify-center sm:w-fit text-[18px] font-medium transition-opacity duration-300 hover:opacity-75 ${linkStyles}`}
         >
             {name}
             <Image src={linkIcon} alt='arrow' className='w-[26px] sm:w-[28px] ml-[12px]' />

@@ -1,5 +1,4 @@
 import { headerLinks } from '@/data/headerLinks';
-import { mainStyles } from '@/variables/mainStyles';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,19 +8,23 @@ import User from '@/public/header_user.svg';
 import HeaderMenu from '../elements/HeaderMenu';
 
 const Header = () => {
-    const { container, padding, transitionOpacity } = mainStyles;
-
     return (
-        <header className={`${container} ${padding} flex items-center justify-between py-[16px] lg:py-[24px]`}>
+        <header className='flex items-center justify-between w-full max-w-[1440px] m-auto py-[16px] lg:py-[24px] px-[20px] lg:px-[40px] xl:px-[80px]'>
             <div className='flex items-center'>
-                <Link href='/' className={`${transitionOpacity} block w-[40px] md:w-[36px] lg:mr-[74px]`}>
+                <Link
+                    href='/'
+                    className='block w-[40px] md:w-[36px] lg:mr-[74px] transition-opacity duration-300 hover:opacity-75'
+                >
                     <Image src={Logo} alt='logo' className='w-full' />
                 </Link>
 
                 <ul className='hidden gap-[56px] lg:flex'>
                     {headerLinks.map(({ id, href, name }) => (
                         <li key={id} className='flex'>
-                            <Link href={href} className={`${transitionOpacity} font-medium text-[#36485C]`}>
+                            <Link
+                                href={href}
+                                className='font-medium text-[#36485C] transition-opacity duration-300 hover:opacity-75'
+                            >
                                 {name}
                             </Link>
                         </li>
@@ -32,13 +35,13 @@ const Header = () => {
             <div className='flex items-center'>
                 <Link
                     href='/'
-                    className={`${transitionOpacity} hidden md:block font-medium text-[#36485C] mr-[32px] lg:mr-[56px]`}
+                    className='hidden md:block font-medium text-[#36485C] mr-[32px] lg:mr-[56px] transition-opacity duration-300 hover:opacity-75'
                 >
                     Open an Account
                 </Link>
                 <Link
                     href='/'
-                    className={`${transitionOpacity} relative flex items-center mr-[20px] md:mr-[32px] lg:mr-0`}
+                    className='relative flex items-center mr-[20px] md:mr-[32px] lg:mr-0 transition-opacity duration-300 hover:opacity-75'
                 >
                     <Image src={User} alt='user' className='w-[32px] sm:w-[26px] sm:mr-[12px]' />
                     <span className='hidden sm:block font-medium text-[#36485C]'>Sign In</span>
