@@ -12,7 +12,7 @@ type Props = {
 const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = () => {} }) => {
     return (
         <div
-            className={cn('fixed z-50 block lg:hidden top-0 left-0 w-full h-full transition-all duration-300', {
+            className={cn('fixed block lg:hidden top-0 left-0 w-full h-full transition-all duration-300', {
                 'visible opacity-100': isMenuActive,
                 'invisible opacity-0': !isMenuActive,
             })}
