@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import ButtonLink from '../ui/ButtonLink';
 import Content from '../ui/Content';
-import SimpleLink from '../ui/Link';
+import SimpleLink from '../ui/SimpleLink';
 import Title from '../ui/Title';
 
 const Banner = () => {
@@ -23,7 +23,7 @@ const Banner = () => {
                     />
                     <div className='block sm:flex items-center justify-center gap-[40px]'>
                         <ButtonLink href='/' name='Try for free' />
-                        <SimpleLink href='/' name='View Pricing' />
+                        <SimpleLink href='/' name='View Pricing' styles='justify-center' />
                     </div>
                 </div>
             </div>

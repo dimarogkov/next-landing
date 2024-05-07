@@ -1,4 +1,6 @@
-export const headerLinks = [
+import { Link } from '@/types/interfaces/Link';
+
+export const headerLinks: Link[] = [
     {
         id: 0,
         href: '/',

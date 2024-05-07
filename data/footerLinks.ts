@@ -1,4 +1,6 @@
-export const footerLinks = [
+import { Link } from '@/types/interfaces/Link';
+
+export const footerLinks: Link[] = [
     {
         id: 0,
         href: '/',

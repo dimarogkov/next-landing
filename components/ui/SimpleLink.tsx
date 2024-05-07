@@ -14,9 +14,10 @@ type Props = {
     href: string;
     name: string;
     type?: string;
+    styles?: string;
 };
 
-const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleLinkTypes.default }) => {
+const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleLinkTypes.default, styles = '' }) => {
     const [linkStyles, setLinkStyles] = useState('text-[#0085FF]');
     const [linkIcon, setLinkIcon] = useState(ArrowBlue);
 
@@ -43,7 +44,7 @@ const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleL
     return (
         <Link
             href={href}
-            className={`flex items-center justify-center sm:w-fit text-[18px] font-medium transition-opacity duration-300 hover:opacity-75 ${linkStyles}`}
+            className={`flex items-center sm:w-fit text-[18px] font-medium transition-opacity duration-300 hover:opacity-75 ${linkStyles} ${styles}`}
         >
             {name}
             <Image src={linkIcon} alt='arrow' className='w-[26px] sm:w-[28px] ml-[12px]' />
