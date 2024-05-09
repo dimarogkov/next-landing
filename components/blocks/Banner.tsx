@@ -22,7 +22,7 @@ const Banner = () => {
                         styles='text-center mb-[32px] md:mb-[24px] last:mb-0'
                     />
                     <div className='block sm:flex items-center justify-center gap-[40px]'>
-                        <ButtonLink href='/' name='Try for free' />
+                        <ButtonLink href='/' name='Try for free' styles='mb-[24px] sm:mb-0' />
                         <SimpleLink href='/' name='View Pricing' styles='justify-center' />
                     </div>
                 </div>

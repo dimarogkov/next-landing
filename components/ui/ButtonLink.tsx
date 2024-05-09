@@ -28,7 +28,7 @@ const ButtonLink: React.FC<Props> = ({
     return (
         <Link
             href={href}
-            className={`flex items-center justify-center sm:w-fit min-w-[160px] h-[56px] text-[18px] font-medium rounded-[4px] px-[16px] mb-[24px] sm:mb-0 transition-opacity duration-300 hover:opacity-75 ${btnLinkStyles} ${styles}`}
+            className={`flex items-center justify-center sm:w-fit min-w-[160px] h-[56px] text-[18px] font-medium rounded-[4px] px-[16px] transition-opacity duration-300 hover:opacity-75 ${btnLinkStyles} ${styles}`}
         >
             {name}
         </Link>

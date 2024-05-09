@@ -1,7 +1,7 @@
 import { Data } from './Data';
 
-export interface AboutBlock {
+export interface PricingBlock {
     id: number;
     data: Data;
-    colorType: string;
+    isActive: boolean;
 }

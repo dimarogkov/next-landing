@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AboutColorType } from '@/types/enums/AboutColorType';
-import { AboutData } from '@/types/interfaces/AboutBlock';
+import { Data } from '@/types/interfaces/Data';
 import cn from 'classnames';
 
 import SimpleLink from '../ui/SimpleLink';
@@ -10,10 +10,10 @@ import Subtitle from '../ui/Subtitle';
 import Content from '../ui/Content';
 
 import Image from 'next/image';
-import AboutCheck from '@/public/about_check.svg';
+import Check from '@/public/check.svg';
 
 type Props = {
-    data: AboutData;
+    data: Data;
     isBlockOdd: boolean;
     colorType: string;
 };
@@ -80,9 +80,9 @@ const AboutBlock: React.FC<Props> = ({ data = {}, isBlockOdd = true, colorType =
                         {list.map((listItem) => (
                             <li key={listItem.id} className='w-full flex items-start mb-[12px] lg:mb-[20px] last:mb-0'>
                                 <Image
-                                    src={AboutCheck}
+                                    src={Check}
                                     alt='check'
-                                    className='w-[24px] min-w-[24px] mr-[16px] last:mr-[0]'
+                                    className='relative top-[5px] xl:top-0 w-[16px] min-w-[16px] xl:w-[24px] xl:min-w-[24px] mr-[12px] xl:mr-[16px] last:mr-[0]'
                                 />
                                 <Content text={listItem.text} />
                             </li>
