@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import { AboutColorType } from '@/types/enums/AboutColorType';
 import { Data } from '@/types/interfaces/Data';
 import cn from 'classnames';
@@ -8,6 +5,7 @@ import cn from 'classnames';
 import SimpleLink from '../ui/SimpleLink';
 import Subtitle from '../ui/Subtitle';
 import Content from '../ui/Content';
+import Label from '../ui/Label';
 
 import Image from 'next/image';
 import Check from '@/public/check.svg';
@@ -19,21 +17,7 @@ type Props = {
 };
 
 const AboutBlock: React.FC<Props> = ({ data = {}, isBlockOdd = true, colorType = AboutColorType.blue }) => {
-    const [labelColor, setLabelColor] = useState('text-[#0085FF]');
     const { label, title, text, list, img, btn } = data;
-
-    useEffect(() => {
-        switch (true) {
-            case colorType === 'green':
-                setLabelColor('text-[#00A424]');
-                break;
-            case colorType === 'pink':
-                setLabelColor('text-[#EB2891]');
-                break;
-            default:
-                setLabelColor('text-[#0085FF]');
-        }
-    }, [colorType]);
 
     return (
         <div
@@ -43,10 +27,7 @@ const AboutBlock: React.FC<Props> = ({ data = {}, isBlockOdd = true, colorType =
         >
             <div className='w-full md:w-[50%] mb-[24px] md:mb-0 last:mb-0'>
                 <div className='w-full md:hidden mb-[24px] last:mb-0'>
-                    {label && (
-                        <span className={`w-full block font-medium mb-[12px] last:mb-0 ${labelColor}`}>{label}</span>
-                    )}
-
+                    {label && <Label text={label} type={colorType} styles='mb-[12px] last:mb-0' />}
                     {title && <Subtitle text={title} />}
                 </div>
 
@@ -62,14 +43,7 @@ const AboutBlock: React.FC<Props> = ({ data = {}, isBlockOdd = true, colorType =
             </div>
             <div className={cn('w-full md:w-[50%]', { 'md:pr-[56px]': isBlockOdd, 'md:pl-[56px]': !isBlockOdd })}>
                 <div className='w-full hidden md:block mb-[20px] last:mb-0'>
-                    {label && (
-                        <span
-                            className={`w-full block font-medium lg:text-[18px] mb-[12px] lg:mb-[16px] last:mb-0 ${labelColor}`}
-                        >
-                            {label}
-                        </span>
-                    )}
-
+                    {label && <Label text={label} type={colorType} styles='mb-[12px] lg:mb-[16px] last:mb-0' />}
                     {title && <Subtitle text={title} />}
                 </div>
 
