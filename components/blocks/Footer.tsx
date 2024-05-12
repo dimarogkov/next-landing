@@ -1,5 +1,5 @@
 import { footerSocials } from '@/data/footerSocials';
-import { footerLinks } from '@/data/footerLinks';
+import { navbarLinks } from '@/data/navbarLinks';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,7 +19,7 @@ const Footer = () => {
                 </Link>
 
                 <ul className='block md:flex md:gap-x-[48px]'>
-                    {footerLinks.map(({ id, href, name }) => (
+                    {navbarLinks.map(({ id, href, name }) => (
                         <li key={id} className='w-full flex justify-center mb-[12px] md:mb-0 last:mb-0'>
                             <Link
                                 href={href}

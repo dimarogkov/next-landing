@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { headerLinks } from '@/data/headerLinks';
+import { navbarLinks } from '@/data/navbarLinks';
 
 import Link from 'next/link';
 import cn from 'classnames';
@@ -33,7 +33,7 @@ const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = (
                 )}
             >
                 <div className='w-full pb-[12px] sm:pb-[20px] md:pb-0 mb-[12px] sm:mb-[20px] md:mb-0 border-solid border-b-2 border-black/20 md:border-none'>
-                    {headerLinks.map(({ id, href, name }) => (
+                    {navbarLinks.map(({ id, href, name }) => (
                         <Link
                             href={href}
                             key={`menu-${id}`}

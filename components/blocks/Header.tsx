@@ -1,4 +1,4 @@
-import { headerLinks } from '@/data/headerLinks';
+import { navbarLinks } from '@/data/navbarLinks';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ const Header = () => {
                     </Link>
 
                     <ul className='hidden gap-[56px] lg:flex'>
-                        {headerLinks.map(({ id, href, name }) => (
+                        {navbarLinks.map(({ id, href, name }) => (
                             <li key={id} className='flex'>
                                 <Link
                                     href={href}

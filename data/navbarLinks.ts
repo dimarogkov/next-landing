@@ -1,24 +1,24 @@
 import { Link } from '@/types/interfaces/Link';
 
-export const headerLinks: Link[] = [
+export const navbarLinks: Link[] = [
     {
         id: 0,
-        href: '/',
-        name: 'Features',
+        href: '/about',
+        name: 'About',
     },
     {
         id: 1,
-        href: '/',
+        href: '/pricing',
         name: 'Pricing',
     },
     {
         id: 2,
-        href: '/',
-        name: 'Enterprise',
+        href: '/services',
+        name: 'Services',
     },
     {
         id: 3,
-        href: '/',
+        href: '/careers',
         name: 'Careers',
     },
 ];
