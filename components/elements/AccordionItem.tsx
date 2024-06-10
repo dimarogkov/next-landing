@@ -22,7 +22,7 @@ const AccordionItem: React.FC<Props> = ({ data, isOpen, toggleAccordion = () => 
             onClick={() => toggleAccordion(id)}
         >
             <div className='w-full flex items-center justify-between'>
-                <Content text={title} styles='font-medium text-[#172026] pr-[16px]' />
+                <Content className='font-medium text-[#172026] pr-[16px]'>{title}</Content>
 
                 <span className='w-[24px] min-w-[24px]'>
                     <Image src={isOpen ? Minus : Plus} alt='plus' className='w-full' />
@@ -30,7 +30,7 @@ const AccordionItem: React.FC<Props> = ({ data, isOpen, toggleAccordion = () => 
             </div>
 
             <Collapse isOpened={isOpen}>
-                <Content text={desk} styles='pt-[8px] lg:pt-[16px]' />
+                <Content className='pt-[8px] lg:pt-[16px]'>{desk}</Content>
             </Collapse>
         </div>
     );

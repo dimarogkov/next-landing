@@ -3,12 +3,12 @@ import { LabelTypes } from '@/types/enums/LabelTypes';
 import { useEffect, useState } from 'react';
 
 type Props = {
-    text: string;
+    children: React.ReactNode;
     type?: string;
-    styles?: string;
+    className?: string;
 };
 
-const Label: React.FC<Props> = ({ text = '', type = LabelTypes.default, styles = '' }) => {
+const Label: React.FC<Props> = ({ children, type = LabelTypes.default, className = '' }) => {
     const [labelStyles, setLabelStyles] = useState('text-[#0085FF]');
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Label: React.FC<Props> = ({ text = '', type = LabelTypes.default, styles =
         }
     }, [type]);
 
-    return <span className={`w-full block font-medium lg:text-[18px] ${labelStyles} ${styles}`}>{text}</span>;
+    return <span className={`w-full block font-medium lg:text-[18px] ${labelStyles} ${className}`}>{children}</span>;
 };
 
 export default Label;

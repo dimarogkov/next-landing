@@ -43,6 +43,7 @@ const MobileMenu: React.FC<Props> = ({ isMenuActive = false, setIsMenuActive = (
                         </Link>
                     ))}
                 </div>
+
                 <Link
                     href='/'
                     className='block md:hidden md:text-[18px] font-medium text-[#36485C] transition-opacity duration-300 hover:opacity-75'

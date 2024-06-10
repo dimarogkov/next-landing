@@ -11,13 +11,13 @@ import ArrowGreen from '@/public/arrow_green.svg';
 import ArrowPink from '@/public/arrow_pink.svg';
 
 type Props = {
+    children: React.ReactNode;
     href: string;
-    name: string;
     type?: string;
-    styles?: string;
+    className?: string;
 };
 
-const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleLinkTypes.default, styles = '' }) => {
+const SimpleLink: React.FC<Props> = ({ children, href = '/', type = SimpleLinkTypes.default, className = '' }) => {
     const [linkStyles, setLinkStyles] = useState('text-[#0085FF]');
     const [linkIcon, setLinkIcon] = useState(ArrowBlue);
 
@@ -44,9 +44,9 @@ const SimpleLink: React.FC<Props> = ({ href = '/', name = 'Link', type = SimpleL
     return (
         <Link
             href={href}
-            className={`flex items-center sm:w-fit text-[18px] font-medium transition-opacity duration-300 hover:opacity-75 ${linkStyles} ${styles}`}
+            className={`flex items-center sm:w-fit text-[18px] font-medium transition-opacity duration-300 hover:opacity-75 ${linkStyles} ${className}`}
         >
-            {name}
+            {children}
             <Image src={linkIcon} alt='arrow' className='w-[26px] sm:w-[28px] ml-[12px]' />
         </Link>
     );
